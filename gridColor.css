@@ -1,0 +1,22 @@
+.wrapper{
+height: 600px;
+width: 600px;
+position: relative;
+margin: auto;
+top: 40px;
+outline: solid 2px black;
+}
+
+
+.box {
+width: 25%;
+height: 25%;
+float: left;
+opacity: .2;
+}
+
+button {
+  position: fixed;
+  left: 50%;
+  margin-left: -5em;
+}
