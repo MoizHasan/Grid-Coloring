@@ -3,11 +3,10 @@
 //reset the grid and prompt the user for the size.
 function reset(){
 var count = 0;
-var height = prompt("Height of new grid?");
-var width = prompt("width of new grid?");
+var width = prompt("Size of new grid?");
 
 //number of squares to add.
-count = height*width;
+count = width*width;
 var wrapper = document.getElementById('wrapper');
 
 //remove existing divs.
@@ -20,7 +19,7 @@ wrapper.removeChild(wrapper.lastChild);
 	var boxes = document.querySelectorAll('.box');
 	for(var i=0; i<boxes.length; i++){
     boxes[i].style.width = 100/width + "%";
-    boxes[i].style.height = 100/height + "%";
+    boxes[i].style.height = 100/width + "%";
 	}
 }
 
