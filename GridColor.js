@@ -1,5 +1,4 @@
 
-
 //reset the grid and prompt the user for the size.
 function reset(){
 var count = 0;
@@ -33,9 +32,25 @@ for (var i=0; i<count; i++){
 	$(".box").mouseenter(function() {
 		var opacity = $(this).css("opacity");
 		$(this).css("opacity", opacity*1.5);
-		$(this).css("background-color", "black");
+		$(this).css("background-color", getColor());
 		});
 }
+
+	function setColor() {
+	var red = document.getElementById('redValue').innerHTML;
+	var green = document.getElementById('greenValue').innerHTML;
+	var blue = document.getElementById('blueValue').innerHTML;
+	var c = "rgb(" + red +"," + green + "," + blue +")";
+	$("#pallet").css("background-color", c);
+	}
+
+function getColor() {
+		var red = document.getElementById('redValue').innerHTML;
+		var green = document.getElementById('greenValue').innerHTML;
+		var blue = document.getElementById('blueValue').innerHTML;
+		var c = "rgb(" + red +"," + green + "," + blue +")";
+		return c;
+	}
 
 
 
@@ -48,4 +63,22 @@ $(document).ready(function() {
 	});
 	setDiv(16);
 	
-});
+	
+	red.onchange = function() {
+		document.getElementById('redValue').innerHTML = red.value;
+		setColor();
+	}
+
+	green.onchange = function() {
+		document.getElementById('greenValue').innerHTML = green.value;
+		setColor();
+	}
+	
+	blue.onchange = function() {
+		document.getElementById('blueValue').innerHTML = blue.value;
+		setColor();
+	}
+	
+
+	
+	});
